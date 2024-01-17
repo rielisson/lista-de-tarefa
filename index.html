@@ -6,16 +6,23 @@
     <title>lista de tarefas</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+    <body>
+    
     <div class="body">
+        
         <div class="menu">
-            <h1>Lista tarefas</h1>
+            
+            <h1 class="title">Lista tarefas</h1>
+            
             <input type="text" class="input">
-            <span class="tela"></span>
-            <button>adicionar</button>
-            <button>remover</button>
-            <button>limpar</button>
-    </div>
-    <script src="script.js"></script>
-</body>
+            
+            <button onclick="addItem()" class="add">adicionar</button>
+            
+            <button onclick="removerItem()" class="dlt">remover</button>
+            
+            <ul id="tela"></ul>
+        </div>
+    
+        <script src="script.js"></script>
+    </body>
 </html>
