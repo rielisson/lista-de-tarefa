@@ -1,3 +1,4 @@
+Certamente! Aqui estão as instruções atualizadas que você pode incluir no README para executar o projeto abrindo diretamente o arquivo `index.html` no navegador:
 
 **README - Projeto de Lista de Tarefas**
 
@@ -6,18 +7,30 @@ Bem-vindo ao nosso projeto de Lista de Tarefas! Este é um site simples projetad
 
 **Instruções de Uso:**
 
-1. **Adicionar Tarefas:**
-   - Para adicionar uma nova tarefa, digite a descrição no campo de entrada (input).
-   - Clique no botão "Adicionar" para incluir a tarefa à lista.
+1. **Executar o Projeto:**
+   - Navegue até o diretório do projeto usando o terminal ou prompt de comando:
 
-2. **Remover Tarefas:**
-   - Para remover uma tarefa, digite a descrição da tarefa no campo de entrada.
-   - Clique no botão "Remover" associado à tarefa que deseja excluir.
-   - A tarefa será removida da lista.
+     ```bash
+     cd caminho/do/seu/projeto
+     ```
 
-3. **Limpar Todas as Tarefas:**
-   - Se quiser apagar todas as tarefas de uma só vez, clique no botão "Limpar".
-   - Isso removerá todas as tarefas da lista.
+2. **Abra o Arquivo `index.html` no Navegador:**
+   - Execute o seguinte comando para abrir o arquivo `index.html` no navegador padrão do seu sistema:
+
+     ```bash
+     open index.html  # para sistemas baseados em Unix, como Linux e macOS
+     ```
+
+     ou
+
+     ```bash
+     start index.html  # para sistemas baseados no Windows
+     ```
+
+   - Se preferir, você pode simplesmente navegar até o diretório do projeto usando o gerenciador de arquivos do seu sistema operacional e clicar duas vezes no arquivo `index.html` para abri-lo no navegador.
+
+3. **Interaja com o Aplicativo:**
+   - O arquivo `index.html` será exibido no seu navegador, permitindo que você interaja com o aplicativo conforme necessário.
 
 **Observações Importantes:**
 
