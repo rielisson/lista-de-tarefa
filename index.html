@@ -12,15 +12,29 @@
         
         <div class="menu">
             
-            <h1 class="title">Lista tarefas</h1>
+            <div class="div-input">
+                
+                <input type="text" class="input">
+
+                <button onclick="addItem()" class="add">adicionar</button>
+
+                <button onclick="removerItem()" class="dlt">remover</button>
+            </div>
             
-            <input type="text" class="input">
+            <div class="div-ul">
+                
+                <p class="title">LISTA DE TAREFAS</p>
+
+                <button class="clear" onclick="zeroItems()">limpar</button>
+                <p class="linha"></p>
+                
+                <ul id="tela">
+                    
+                </ul>
+             
+            </div>
             
-            <button onclick="addItem()" class="add">adicionar</button>
             
-            <button onclick="removerItem()" class="dlt">remover</button>
-            
-            <ul id="tela"></ul>
         </div>
     
         <script src="script.js"></script>

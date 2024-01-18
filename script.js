@@ -14,12 +14,18 @@ class ListaDeTarefas{
     displayItems(){
         const listElements = document.getElementById('tela');
         listElements.innerHTML = '';
-
+        
         this.list.forEach(item => {
             const listItem = document.createElement('li');
             listItem.textContent = item;
             listElements.appendChild(listItem);
         })
+    }
+    clearItems(){
+        const index = this.list.length;
+        if(index != 0){
+            this.list.splice(0,index);
+        }
     }
 }
 const userList = new ListaDeTarefas();
@@ -30,6 +36,7 @@ function addItem(){
     if(newItem.trim() !== ''){
         userList.adicionar(newItem);
         userList.displayItems();
+        document.querySelector('input').value = '';
     }
 }
 function removerItem(){
@@ -37,5 +44,10 @@ function removerItem(){
     if(dlt.trim() !== ''){
         userList.remover(dlt);
         userList.displayItems();
+        document.querySelector('input').value = '';
     }
+}
+function zeroItems(){
+    userList.clearItems();
+    userList.displayItems();
 }
