@@ -1,52 +1,68 @@
-Certamente! Aqui estão as instruções atualizadas que você pode incluir no README para executar o projeto abrindo diretamente o arquivo `index.html` no navegador:
 
-**README - Projeto de Lista de Tarefas**
 
-**Introdução:**
-Bem-vindo ao nosso projeto de Lista de Tarefas! Este é um site simples projetado para ajudar você a gerenciar suas tarefas de forma eficiente. Com uma interface intuitiva, você pode adicionar e remover tarefas com facilidade.
+# Lista de Tarefas
 
-**Instruções de Uso:**
+Este é um projeto simples de lista de tarefas desenvolvido em HTML, CSS e JavaScript. Ele permite adicionar, remover e exibir tarefas, com os dados sendo salvos no `localStorage` do navegador para persistência. As tarefas são carregadas automaticamente assim que o usuário acessa a página.
 
-1. **Executar o Projeto:**
-   - Navegue até o diretório do projeto usando o terminal ou prompt de comando:
+## Funcionalidades
 
-     ```bash
-     cd caminho/do/seu/projeto
-     ```
+- **Adicionar Tarefas:** Adicione novas tarefas à lista.
+- **Remover Tarefas:** Remova tarefas específicas da lista.
+- **Limpar Lista:** Remova todas as tarefas da lista de uma vez.
+- **Persistência de Dados:** As tarefas são salvas no `localStorage`, permitindo que os dados permaneçam mesmo após o fechamento do navegador.
+- **Carregamento Automático:** As tarefas são carregadas automaticamente na interface assim que o usuário acessa a página.
 
-2. **Abra o Arquivo `index.html` no Navegador:**
-   - Execute o seguinte comando para abrir o arquivo `index.html` no navegador padrão do seu sistema:
+## Como Usar
 
-     ```bash
-     open index.html  # para sistemas baseados em Unix, como Linux e macOS
-     ```
+1. Clone o repositório para sua máquina local:
 
-     ou
+   ```bash
+   git clone https://github.com/rielisson/lista-de-tarefas.git
+   ```
 
-     ```bash
-     start index.html  # para sistemas baseados no Windows
-     ```
+2. Abra o arquivo `index.html` no seu navegador preferido.
 
-   - Se preferir, você pode simplesmente navegar até o diretório do projeto usando o gerenciador de arquivos do seu sistema operacional e clicar duas vezes no arquivo `index.html` para abri-lo no navegador.
+3. Adicione tarefas utilizando o campo de entrada e o botão "Adicionar".
 
-3. **Interaja com o Aplicativo:**
-   - O arquivo `index.html` será exibido no seu navegador, permitindo que você interaja com o aplicativo conforme necessário.
+4. Para remover uma tarefa, digite o nome da tarefa no campo de entrada e clique em "Remover".
 
-**Observações Importantes:**
+5. Para limpar toda a lista de tarefas, clique em "Limpar".
 
-- Certifique-se de salvar suas tarefas antes de fechar o navegador, pois elas não são armazenadas permanentemente.
-- A ordem das tarefas na lista pode ser alterada conforme você as adiciona e remove.
+## Estrutura do Projeto
 
-**Tecnologias Utilizadas:**
+```bash
+├── index.html        # Estrutura HTML da aplicação
+├── style.css         # Estilos CSS para a interface
+└── script.js         # Lógica principal em JavaScript
+```
 
-Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+## Código JavaScript
 
-- HTML5
-- CSS3
-- JavaScript
+A lógica principal da aplicação está no arquivo `script.js`, que contém uma classe `ListaDeTarefas` responsável por manipular o `localStorage` e gerenciar a adição, remoção e exibição de tarefas.
 
-**Feedback e Contribuições:**
+### Classe `ListaDeTarefas`
 
-Estamos sempre abertos a feedback e sugestões. Caso encontre algum problema ou tenha ideias para melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request no repositório do projeto.
+- **Constructor:** Carrega as tarefas armazenadas no `localStorage`.
+- **salvaTarefa():** Salva as tarefas no `localStorage`.
+- **adicionar(item):** Adiciona uma nova tarefa à lista.
+- **remover(item):** Remove uma tarefa específica da lista.
+- **displayItems():** Exibe as tarefas na interface.
+- **clearItems():** Limpa todas as tarefas da lista.
 
-Agradecemos por usar nossa Lista de Tarefas e esperamos que ela torne seu gerenciamento de tarefas mais fácil e eficaz!
+## Requisitos
+
+- Navegador com suporte a HTML5, CSS3 e JavaScript.
+
+## Melhorias Futuras
+
+- Implementar um sistema de edição de tarefas.
+- Adicionar suporte a múltiplas listas de tarefas.
+- Adicionar uma interface mais moderna e responsiva.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
+---
+
+Você pode personalizar este README conforme necessário, adicionando ou removendo seções de acordo com as necessidades do seu projeto.

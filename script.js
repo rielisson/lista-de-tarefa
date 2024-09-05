@@ -1,53 +1,65 @@
-class ListaDeTarefas{
-    constructor(){
-        this.list = [];
+class ListaDeTarefas {
+    constructor() {
+        this.tarefa = JSON.parse(localStorage.getItem('tarefas')) || [];
     }
-    adicionar(item){
-        this.list.push(item);
+    
+    salvaTarefa() {
+        localStorage.setItem('tarefas', JSON.stringify(this.tarefa));
+        console.log(this.tarefa);
     }
-    remover(item){
-        const index = this.list.indexOf(item);
-        if(index != -1){
-            this.list.splice(index, 1);
+
+    adicionar(item) {
+        this.tarefa.push(item);
+        this.salvaTarefa();
+    }
+
+    remover(item) {
+        const index = this.tarefa.indexOf(item);
+        if (index != -1) {
+            this.tarefa.splice(index, 1);
+            this.salvaTarefa();
         }
     }
-    displayItems(){
+
+    displayItems() {
         const listElements = document.getElementById('tela');
         listElements.innerHTML = '';
         
-        this.list.forEach(item => {
+        this.tarefa.forEach(item => {
             const listItem = document.createElement('li');
             listItem.textContent = item;
             listElements.appendChild(listItem);
-        })
+        });
     }
-    clearItems(){
-        const index = this.list.length;
-        if(index != 0){
-            this.list.splice(0,index);
-        }
+
+    clearItems() {
+        this.tarefa = [];
+        this.salvaTarefa();
     }
 }
+
 const userList = new ListaDeTarefas();
+userList.displayItems(); 
 
-
-function addItem(){
+function addItem() {
     const newItem = document.querySelector('.input').value;
-    if(newItem.trim() !== ''){
+    if (newItem.trim() !== '') {
         userList.adicionar(newItem);
         userList.displayItems();
-        document.querySelector('input').value = '';
+        document.querySelector('.input').value = '';
     }
 }
-function removerItem(){
-    const dlt = document.querySelector('input').value;
-    if(dlt.trim() !== ''){
+
+function removerItem() {
+    const dlt = document.querySelector('.input').value;
+    if (dlt.trim() !== '') {
         userList.remover(dlt);
         userList.displayItems();
-        document.querySelector('input').value = '';
+        document.querySelector('.input').value = '';
     }
 }
-function zeroItems(){
+
+function zeroItems() {
     userList.clearItems();
     userList.displayItems();
 }
