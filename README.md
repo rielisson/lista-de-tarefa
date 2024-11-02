@@ -62,7 +62,3 @@ A lógica principal da aplicação está no arquivo `script.js`, que contém uma
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
-
----
-
-Você pode personalizar este README conforme necessário, adicionando ou removendo seções de acordo com as necessidades do seu projeto.
