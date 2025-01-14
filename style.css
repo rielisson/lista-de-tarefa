@@ -1,109 +1,155 @@
-*{
+* {
     margin: 0;
-    box-sizing: border-box;
     padding: 0;
-}
-.menu{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    background-color: rgb(74,144,226);
-    
-}
-.div-input{
-    background-color: rgb(255,255,255);
-    width: 500px;
-    height: 80px;
-    position: relative;
-    left: 35%;
-    top: 5%;
-    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-.input{
-    position: relative;
-    width: 400px;
-    height: 25px;
-    left: 11%;
-    top: 7%;
-    border: 2px solid black;
-    border-radius: 3px;
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, rgba(10, 10, 30, 1) 0%, rgba(30, 30, 70, 1) 50%, rgba(50, 50, 100, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-.add{
-    position: relative;
-    width: 150px;
-    background-color: rgb(76,175,80);
-    border-radius: 5px;
-    top: 22%;
-    cursor: pointer;
-    left: 17%;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    
-}
-.dlt{
-    position: relative;
-    width: 150px;
-    background-color: rgb(159,96,96);
-    border-radius: 5px;
-    top: 22%;
-    left: 25%;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-}
-/*end navbar*/
-.div-ul{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0,0,0);
-    position: relative;
-    top: 13%;
-    height: 500px;
-    width: 500px;
-    left: 35%;
-    border-radius: 10px;
-}
-.title{
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0,0,0);
-    position: relative;
-    top: 5%;
-    font-size: 1.3em;
-    font-weight: 600;
-    left: 3%;
-}
-.clear{
-    position: relative;
-    left: 80%;
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(159,96,96);
-    width: 80px;
-    height: 30px;
-    
-}
-.linha{
-    position: relative;
-    border: 1px solid black;
-    position: relative;
-    top: 3%;
-    width: 430px;
-    left: 7%;
-}
-#tela{
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 10%;
-    font-size: 1.3em;
-    font-weight: 500;
-}
-#tela li{
-    position: relative;
+
+.container {
     width: 100%;
-    height: 40px;
-    left: 7%;
-   
+    max-width: 540px;
+}
+
+.todo-app {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    color: #1a1a1a;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e1e1e1;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.add-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #5a6fd1;
+}
+
+.list-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.tasks-list {
+    list-style: none;
+}
+
+.tasks-list li {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.tasks-list li:hover {
+    transform: translateX(5px);
+}
+
+.task-text {
+    flex: 1;
+    margin-right: 12px;
+}
+
+.remove-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .todo-app {
+        background: #2d3748;
+    }
+
+    .title {
+        color: white;
+    }
+
+    .task-input {
+        background: #1a202c;
+        border-color: #4a5568;
+        color: white;
+    }
+
+    .tasks-list li {
+        background: #1a202c;
+        color: white;
+    }
 }

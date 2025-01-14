@@ -1,42 +1,31 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lista de tarefas</title>
+    <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-    <body>
-    
-    <div class="body">
-        
-        <div class="menu">
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h1 class="title">LISTA DE TAREFAS</h1>
             
-            <div class="div-input">
-                
-                <input type="text" class="input">
-
-                <button onclick="addItem()" class="add">adicionar</button>
-
-                <button onclick="removerItem()" class="dlt">remover</button>
+            <div class="input-section">
+                <input type="text" class="task-input" placeholder="Adicionar nova tarefa...">
+                <button onclick="addItem()" class="add-btn">Adicionar</button>
             </div>
-            
-            <div class="div-ul">
-                
-                <p class="title">LISTA DE TAREFAS</p>
 
-                <button class="clear" onclick="zeroItems()">limpar</button>
-                <p class="linha"></p>
-                
-                <ul id="tela">
-                    
-                </ul>
-             
+            <div class="todo-list">
+                <div class="list-header">
+                    <button class="clear-btn" onclick="zeroItems()">Limpar tudo</button>
+                </div>
+                <ul id="tela" class="tasks-list"></ul>
             </div>
-            
-            
         </div>
-    
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
