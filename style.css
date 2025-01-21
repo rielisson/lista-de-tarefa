@@ -17,35 +17,39 @@ body {
 .container {
     width: 100%;
     max-width: 540px;
+    padding: 0 15px;
 }
 
 .todo-app {
     background: white;
     border-radius: 20px;
-    padding: 32px;
+    padding: clamp(16px, 5vw, 32px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .title {
     color: #1a1a1a;
-    font-size: 24px;
+    font-size: clamp(20px, 5vw, 24px);
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: clamp(16px, 4vw, 24px);
     text-align: center;
 }
 
 .input-section {
     display: flex;
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: clamp(20px, 4vw, 32px);
+    flex-wrap: wrap;
 }
 
 .task-input {
     flex: 1;
-    padding: 12px 16px;
+    min-width: 200px;
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
     border: 2px solid #e1e1e1;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     transition: border-color 0.3s ease;
 }
 
@@ -58,12 +62,20 @@ body {
     background: #667eea;
     color: white;
     border: none;
-    padding: 12px 24px;
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
     border-radius: 12px;
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+@media (min-width: 480px) {
+    .add-btn {
+        width: auto;
+    }
 }
 
 .add-btn:hover {
@@ -80,7 +92,7 @@ body {
     background: none;
     border: none;
     color: #dc3545;
-    font-size: 14px;
+    font-size: clamp(12px, 2.5vw, 14px);
     font-weight: 500;
     cursor: pointer;
     padding: 8px 16px;
@@ -98,13 +110,31 @@ body {
 
 .tasks-list li {
     background: #f8f9fa;
-    padding: 16px;
+    padding: clamp(12px, 3vw, 16px);
     border-radius: 12px;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (max-width: 480px) {
+    .tasks-list li {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .task-text {
+        margin-bottom: 8px;
+    }
+    
+    .button-container {
+        display: flex;
+        gap: 8px;
+    }
 }
 
 .tasks-list li:hover {
@@ -114,22 +144,68 @@ body {
 .task-text {
     flex: 1;
     margin-right: 12px;
+    font-size: clamp(14px, 3vw, 16px);
+    word-break: break-word;
+}
+
+.button-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.remove-btn, .editar-btn {
+    padding: clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 16px);
+    border-radius: 8px;
+    font-size: clamp(12px, 2.5vw, 14px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    color: white;
 }
 
 .remove-btn {
     background: #dc3545;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+.editar-btn {
+    background-color: #188755;
+}
+
+.editar-btn:hover {
+    background-color: #146c44;
+}
+
+.button-editar {
+    background: #667eea;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
+    border-radius: 12px;
+    font-size: clamp(14px, 3vw, 16px);
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.remove-btn:hover {
-    background: #c82333;
+.button-editar:hover {
+    background: #5a6fd1;
+}
+
+.input-editar {
+    flex: 1;
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
+    border: 2px solid #e1e1e1;
+    border-radius: 12px;
+    font-size: clamp(14px, 3vw, 16px);
+    margin: 5px;
+    transition: border-color 0.3s ease;
+    min-width: 0;
 }
 
 /* Dark mode support */
@@ -142,7 +218,7 @@ body {
         color: white;
     }
 
-    .task-input {
+    .task-input, .input-editar {
         background: #1a202c;
         border-color: #4a5568;
         color: white;
